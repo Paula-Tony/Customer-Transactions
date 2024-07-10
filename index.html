@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Customer Transactions</title>
+  </head>
+  <body>
+
+    <!--! Main -->
+    <main class="py-5 min-vh-100">
+      <div class="container">
+        <h1 class="display-4 text-center fw-bold mb-4">
+          Customer Transactions
+        </h1>
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <input
+              type="text"
+              class="form-control mb-4"
+              id="searchInput"
+              placeholder="Search by Name or Amount"
+            />
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table
+            class="table table-bordered table-hover fs-5 text-center mb-0 align-middle"
+          >
+            <thead class="table-light">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody id="transactionTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!--! Chart Popup -->
+    <div
+      class="modal fade"
+      id="chartModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog top-50 translate-middle-y">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <canvas id="transactionChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--! Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
