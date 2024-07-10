@@ -44,10 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${customer.name}</td>`;
 
       const rowTransactionAmount = document.createElement("td");
-      rowTransactionAmount.className = "px-0";
-
       const rowTransactionDate = document.createElement("td");
-      rowTransactionDate.className = "px-0";
 
       const customerTransactions = transactions.filter(
         (transaction) => transaction.customer_id == customer.id
@@ -56,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
       customerTransactions.forEach((transaction, index, arr) => {
         rowTransactionAmount.innerHTML +=
           transaction.amount +
-          (index != arr.length - 1 ? '<hr class="my-2" />' : "");
+          (index != arr.length - 1 ? '<hr class="my-2 w-75 mx-auto" />' : "");
         rowTransactionDate.innerHTML +=
           transaction.date +
-          (index != arr.length - 1 ? '<hr class="my-2" />' : "");
+          (index != arr.length - 1 ? '<hr class="my-2 w-75 mx-auto" />' : "");
       });
 
       row.appendChild(rowTransactionAmount);
