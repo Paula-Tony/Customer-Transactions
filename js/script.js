@@ -45,6 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const rowTransactionAmount = document.createElement("td");
       const rowTransactionDate = document.createElement("td");
+<<<<<<< HEAD
+      rowTransactionDate.className = 'text-nowrap'
+=======
+>>>>>>> ecb5f45981c6708a27cdf9c0fff2ddc43976b9e5
 
       const customerTransactions = transactions.filter(
         (transaction) => transaction.customer_id == customer.id
