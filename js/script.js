@@ -35,9 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayTransactions() {
     customers.forEach((customer) => {
       const row = document.createElement("tr");
+      row.title = "Click Me";
       row.dataset.id = customer.id;
-      row.dataset.bsToggle = 'modal';
-      row.dataset.bsTarget = '#chartModal';
+      row.dataset.bsToggle = "modal";
+      row.dataset.bsTarget = "#chartModal";
       row.innerHTML = `
         <td>${customer.id}</td>
         <td>${customer.name}</td>`;
@@ -71,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function filterData() {
-
     const searchValue = searchInput.value.toLowerCase();
     const rows = document.querySelectorAll("tbody tr");
 
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function displayChart(event) {
-    
     if (chart) chart.destroy();
 
     const customerId = event.target.parentElement.dataset.id;
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const labels = [...new Set(customerTransactions.map((t) => t.date))];
-    
+
     const data = labels.map((date) =>
       customerTransactions
         .filter((t) => t.date === date)
@@ -120,37 +119,35 @@ document.addEventListener("DOMContentLoaded", () => {
         plugins: {
           legend: {
             labels: {
-              color: 'white'
-            }
+              color: "white",
+            },
           },
           tooltip: {
-            bodyColor: 'white',
-            titleColor: 'white',
-            footerColor: 'white' 
-          }
+            bodyColor: "white",
+            titleColor: "white",
+            footerColor: "white",
+          },
         },
         scales: {
           x: {
             grid: {
-              color: 'white'
+              color: "white",
             },
             ticks: {
-              color: 'white'
-            }
+              color: "white",
+            },
           },
           y: {
             grid: {
-              color: 'white'
+              color: "white",
             },
             ticks: {
-              color: 'white'
-            }
-          }
-        }
-      }
+              color: "white",
+            },
+          },
+        },
+      },
     });
-    
-    
   }
 
   searchInput.addEventListener("keyup", filterData);
